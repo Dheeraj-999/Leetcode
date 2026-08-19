@@ -10,9 +10,8 @@ public:
             }
             dq.push_back(i);
         }
-
+ans.push_back(nums[dq.front()]);
         for(int i=k;i<nums.size();i++){
-            ans.push_back(nums[dq.front()]);
 
             while(dq.size()>0 && dq.front() <= i-k){
                 dq.pop_front();
@@ -22,8 +21,10 @@ public:
                 dq.pop_back();
             }
             dq.push_back(i);
+
+            ans.push_back(nums[dq.front()]);
         }
-        ans.push_back(nums[dq.front()]);
+        
         return ans;
     }
 };
